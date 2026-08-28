@@ -4,6 +4,7 @@ project:
   resources:
     - CNAME
     - files/
+    - s/                  # legacy squarespace path, keeps the old CV url alive
 
 website:
   title: "Todd Gerarden"

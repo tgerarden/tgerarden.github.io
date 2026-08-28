@@ -8,8 +8,14 @@ No package manager, no lockfile, no CI. The only dependency is the `quarto` bina
 
 1. Edit `index.qmd`. Publications are plain markdown paragraphs inside a
    `::: {.pub-list}` div — add or move one entry.
-2. If the CV changed, rebuild it in `~/Dropbox/CV/current cv/` and copy it over:
-   `cp "$HOME/Dropbox/CV/current cv/todd-gerarden-cv.pdf" files/`
+2. If the CV changed, rebuild it in `~/Dropbox/CV/current cv/` and copy it to
+   **both** locations — `s/` preserves the old Squarespace URL, which is still
+   linked from elsewhere, and it will serve a stale CV if you forget it:
+
+   ```bash
+   CV="$HOME/Dropbox/CV/current cv/todd-gerarden-cv.pdf"
+   cp "$CV" files/ && cp "$CV" s/
+   ```
 3. `quarto preview` to check it, then `quarto render` to write `docs/`.
 4. `git add -A && git commit -m "..." && git push`
 
