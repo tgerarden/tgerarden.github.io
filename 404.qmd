@@ -9,7 +9,7 @@ That address doesn't exist. A few pages moved when this site was rebuilt — the
 research listing and the CV are both on the homepage.
 
 ::: {.links}
-[Todd Gerarden](https://toddgerarden.com/)[CV (pdf)](https://toddgerarden.com/files/todd-gerarden-cv.pdf)[gerarden@cornell.edu](mailto:gerarden@cornell.edu)
+[Todd Gerarden's homepage](https://toddgerarden.com/)[gerarden@cornell.edu](mailto:gerarden@cornell.edu)
 :::
 
 ::: {.notfound-photo}
