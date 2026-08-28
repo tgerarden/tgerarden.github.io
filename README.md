@@ -20,11 +20,11 @@ The commit must include `docs/` — that's what GitHub serves.
 | Path | What it is |
 |---|---|
 | `index.qmd` | all page content |
-| `custom.scss` | the entire design, ~140 lines |
+| `custom.scss` | the entire design, ~195 lines |
 | `_quarto.yml` | project + site config |
 | `files/` | CV and ungated paper PDFs |
 | `images/` | headshot, favicon |
-| `fonts/` | self-hosted `.woff2` |
+| `fonts/` | Newsreader, self-hosted as variable fonts (optical-size axis intact) |
 | `docs/` | rendered output, committed and served |
 | `CNAME` | custom domain; Quarto copies it into `docs/` on render |
 | `.nojekyll` | stops GitHub running Jekyll over the output |
@@ -43,9 +43,48 @@ likely, not less. Always confirm `docs/index.html` was written before committing
 
 ## Hosting
 
-- Settings → Pages: deploy from branch `main`, folder `/docs`. The custom domain
-  field is left empty — the committed `CNAME` sets it.
-- DNS at Namecheap: apex `A` records point at GitHub Pages; `www` is a `CNAME` to
-  `tgerarden.github.io`.
-- Don't delete `aem2850`'s own `CNAME` file — it's what keeps that course site on
-  `aem2850.toddgerarden.com`.
+Live at <https://toddgerarden.com>, GitHub Pages out of `docs/` on `main`.
+
+- **Pages source**: `main` / `/docs`. GitHub auto-enabled Pages when the repo was
+  named `tgerarden.github.io` and defaulted it to the repo *root*, which has no
+  `index.html` — so `/` 404'd until the path was changed. Changing the source via
+  the API does not trigger a rebuild; force one if it looks stuck.
+- **Custom domain**: set in the Pages config *and* committed as `CNAME`, which
+  Quarto copies into `docs/` on every render. Because the custom domain is set,
+  `tgerarden.github.io` 301s to `toddgerarden.com` — so it can't be used as a
+  preview URL. To preview online before a DNS change, detach the domain from the
+  Pages settings temporarily (the `CNAME` file can stay put); it re-attaches on
+  the next build. Note that detaching or attaching the domain makes GitHub commit
+  to `docs/CNAME` itself, so expect stray "Create CNAME" / "Delete CNAME" commits
+  and pull before your next push.
+- **Zero external requests.** `$web-font-path: false` in `custom.scss` kills the
+  Google Fonts `@import` that the `cosmo` theme otherwise hides inside the
+  compiled stylesheet — invisible in `index.html`, but the browser still fetches
+  it.
+
+### DNS at Namecheap
+
+| Type | Host | Value |
+|---|---|---|
+| A | `@` | `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` |
+| CNAME | `www` | `tgerarden.github.io.` |
+| CNAME | `aem2850` | `tgerarden.github.io.` — the course site, leave alone |
+
+### If HTTPS shows a certificate warning
+
+GitHub verifies DNS at the moment you attach the custom domain, and does not
+reliably retry. Attaching it *before* DNS pointed at GitHub left the certificate
+stuck on "not yet issued" while HTTPS served GitHub's `*.github.io` cert, which
+doesn't match the domain.
+
+Fix: with DNS already correct, detach and re-attach the custom domain. The
+certificate is approved within seconds. Then
+
+```bash
+gh api -X PUT repos/tgerarden/tgerarden.github.io/pages -F https_enforced=true
+```
+
+Note `-F`, not `-f` — the API wants a boolean, and `-f` sends a string and
+silently does nothing.
+
+**Set DNS first, attach the domain second.** That avoids the whole problem.
