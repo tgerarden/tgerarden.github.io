@@ -1,0 +1,14 @@
+---
+pagetitle: "Page not found"
+---
+
+::: {.notfound}
+# Page not found
+
+That address doesn't exist. A few pages moved when this site was rebuilt — the
+research listing and the CV are both on the homepage.
+
+::: {.links}
+[Homepage](https://toddgerarden.com/)[CV (pdf)](https://toddgerarden.com/files/todd-gerarden-cv.pdf)[gerarden@cornell.edu](mailto:gerarden@cornell.edu)
+:::
+:::

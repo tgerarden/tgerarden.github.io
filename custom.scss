@@ -178,6 +178,23 @@ main h2 {
   margin-top: 0.25rem;
 }
 
+// 404 --------------------------------------------------------------------
+// Links here must be absolute: GitHub serves this file for any missing path,
+// so a relative href would resolve against /whatever/the/visitor/typed.
+
+.notfound {
+  padding-top: 1.5rem;
+  max-width: 52ch;
+
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    letter-spacing: -0.012em;
+    margin: 0 0 0.9rem;
+  }
+  p { margin-bottom: 1.5rem; }
+}
+
 // Small screens ------------------------------------------------------------
 
 @media (max-width: 780px) {
