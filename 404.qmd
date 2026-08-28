@@ -11,4 +11,9 @@ research listing and the CV are both on the homepage.
 ::: {.links}
 [Todd Gerarden](https://toddgerarden.com/)[CV (pdf)](https://toddgerarden.com/files/todd-gerarden-cv.pdf)[gerarden@cornell.edu](mailto:gerarden@cornell.edu)
 :::
+
+::: {.notfound-photo}
+<img src="https://toddgerarden.com/images/gerarden-casual.jpg"
+     alt="Todd Gerarden on a mountain summit, ridgelines and clouds behind">
+:::
 :::

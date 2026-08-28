@@ -195,6 +195,18 @@ main h2 {
   p { margin-bottom: 1.5rem; }
 }
 
+.notfound-photo {
+  margin-top: 2.5rem;
+
+  img {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+  }
+}
+
 // Small screens ------------------------------------------------------------
 
 @media (max-width: 780px) {

@@ -5,6 +5,7 @@ project:
     - CNAME
     - files/
     - s/                  # legacy squarespace path, keeps the old CV url alive
+    - images/             # 404.qmd references these by absolute url, so copy them explicitly
 
 website:
   title: "Todd Gerarden"
