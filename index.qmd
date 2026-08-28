@@ -1,0 +1,101 @@
+---
+pagetitle: "Todd Gerarden"
+description-meta: "Todd Gerarden is an energy and environmental economist at the Dyson School of Applied Economics and Management, Cornell University."
+description: "Energy and environmental economist at the Dyson School of Applied Economics and Management, Cornell University."
+---
+
+::: {.profile-header}
+![](images/gerarden-headshot.jpg){.profile-photo fig-alt="Todd Gerarden"}
+
+::: {.profile-text}
+# Todd Gerarden
+
+::: {.affiliation}
+Ruth and William Morgan Associate Professor\
+Dyson School of Applied Economics and Management\
+Cornell SC Johnson College of Business\
+Cornell University
+:::
+
+::: {.links}
+[gerarden@cornell.edu](mailto:gerarden@cornell.edu)[Google Scholar](https://scholar.google.com/citations?hl=en&oi=ao&user=nbbHdsgAAAAJ)[GitHub](https://github.com/tgerarden)
+:::
+
+::: {.cv-link}
+[CV (pdf)](files/todd-gerarden-cv.pdf)
+:::
+:::
+:::
+
+::: {.bio}
+I study energy and environmental economics, with a focus on innovation, investment, and production in clean energy industries. My recent work examines trade and industrial policy in the solar sector as well as the returns to government research funding.
+:::
+
+## Working Papers
+
+::: {.pub-list}
+[“Strategic Avoidance and the Welfare Impacts of U.S. Solar Panel Tariffs”](files/solar-tariffs.pdf)
+with Bryan Bollinger, Kenneth Gillingham, and Daniel Xu. NBER Working Paper 34401.
+R&R at *American Economic Review*
+:::
+
+## Work in Progress
+
+::: {.pub-list}
+“How DOEs Government Funding Fuel Scientists?” with Eugenie Dugoua, Kyle Myers, and
+Jacquelyn Pless
+
+“Industrial Policy and the Structure of Global Supply Chains: The Case of Solar
+Manufacturing”
+:::
+
+## Published and Accepted Work
+
+::: {.pub-list}
+[The Role of Industrial Policy in the Renewable Energy Sector](https://doi.org/10.1086/738542),
+with Mar Reguant and Daniel Xu. 2026. *NBER Environmental and Energy Policy and the Economy*
+7: 97-148. [[ungated version](https://www.nber.org/papers/w34079)]{.extras}
+
+[Induced Innovation, Inventors, and the Energy Transition](https://doi.org/10.1257/aeri.20230522),
+with Eugenie Dugoua. 2025. *American Economic Review: Insights* 7(1): 90-106.
+[[ungated version](files/dg_green_inventors.pdf) · [ungated online appendix](files/dg_green_inventors_appendix.pdf) · [code](https://doi.org/10.3886/E203961V1)]{.extras}
+
+[Demanding Innovation: The Impact of Consumer Subsidies on Solar Panel Production Costs](https://doi.org/10.1287/mnsc.2022.4662).
+2023. *Management Science* 69(12): 7799-7820.
+[[ungated version](files/gerarden_solar_innovation.pdf) · [ungated online appendix](files/gerarden_solar_innovation_online_appendices.pdf) · [code](https://pubsonline.informs.org/doi/suppl/10.1287/mnsc.2022.4662)]{.extras}
+
+[Investment versus Output Subsidies: Implications of Alternative Incentives for Wind Energy](https://doi.org/10.1086/723142),
+with Joseph E. Aldy and Richard L. Sweeney. 2023. *Journal of the Association of Environmental
+and Resource Economists* 10(4): 981-1018.
+[[ungated version](files/AGS_Output_Subsidies.pdf) · [code](https://doi.org/10.7910/DVN/DBVDU6)]{.extras}
+
+[Using Targeting to Optimize Program Design: Evidence from an Energy Conservation Experiment](https://doi.org/10.1086/722833),
+with Muxi Yang. 2023. *Journal of the Association of Environmental and Resource Economists*
+10(3): 687-716.
+[[ungated version](files/Gerarden-Yang-Using-Targeting-to-Optimize-Program-Design.pdf) · [code](https://doi.org/10.7910/DVN/JAAPYA)]{.extras}
+
+[Federal Coal Program Reform, the Clean Power Plan, and the Interaction of Upstream and Downstream Climate Policies](https://doi.org/10.1257/pol.20160246),
+with W. Spencer Reeder and James H. Stock. 2020. *American Economic Journal: Economic Policy*
+12(1): 167-99. [[code](https://github.com/tgerarden/grs_federal_coal_reform)]{.extras}
+
+[The Effects of Fuel Prices, Environmental Regulations, and Other Factors on U.S. Coal Production, 2008-2016](https://doi.org/10.5547/01956574.41.1.jcog),
+with John Coglianese and James H. Stock. 2020. *The Energy Journal* 41(1): 55-81.
+
+[Assessing the Energy-Efficiency Gap](https://doi.org/10.1257/jel.20161360),
+with Richard G. Newell and Robert N. Stavins. 2017. *Journal of Economic Literature*
+55(4): 1486-525.
+
+[Is Energy Efficiency Capitalized into Home Prices? Evidence from Three U.S. Cities](https://doi.org/10.1016/j.jeem.2016.11.006),
+with Margaret Walls, Karen L. Palmer, and Xian Fang Bak. 2017. *Journal of Environmental
+Economics and Management* 82: 104-124.
+
+[Deconstructing the Energy-Efficiency Gap: Conceptual Frameworks and Evidence](https://doi.org/10.1257/aer.p20151012),
+with Richard G. Newell and Robert N. Stavins. 2015. *American Economic Review: Papers &
+Proceedings* 105(5): 183-86.
+
+[Assessing the Energy-Efficiency Information Gap: Results from a Survey of Home Energy Auditors](https://doi.org/10.1007/s12053-012-9178-2),
+with Karen L. Palmer, Margaret Walls, and Hal Gordon. 2013. *Energy Efficiency* 6(2): 271-92.
+
+[The Impact of Water Depth on Safety and Environmental Performance in Offshore Oil and Gas Production](https://doi.org/10.1016/j.enpol.2012.12.074),
+with Lucija Muehlenbachs and Mark A. Cohen. 2013. *Energy Policy* 55: 699-705.
+:::

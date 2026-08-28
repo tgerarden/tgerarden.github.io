@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+  resources:
+    - CNAME
+    - files/
+
+website:
+  title: "Todd Gerarden"
+  description: "Energy and environmental economist, Dyson School of Applied Economics and Management, Cornell University"
+  site-url: https://toddgerarden.com
+  favicon: images/favicon.ico
+  open-graph: true
+  search: false          # nothing to search on a one-page site
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: false
+    anchor-sections: false
+    grid:
+      body-width: 820px
+      sidebar-width: 0px
+      margin-width: 0px

@@ -1,0 +1,195 @@
+/*-- scss:defaults --*/
+
+$cornell-red:  #B31B1B;
+$ink:          #1a1a1a;
+$muted:        #5f5f5f;
+$rule:         #e2e2e2;
+
+$primary:              $cornell-red;
+$link-color:           $cornell-red;
+$link-hover-color:     darken($cornell-red, 12%);
+$body-color:           $ink;
+$body-bg:              #ffffff;
+$headings-font-weight: 600;
+
+// cosmo pulls Source Sans Pro from Google Fonts via an @import inside the
+// compiled stylesheet. Kill it: the only face here is self-hosted.
+$web-font-path: false;
+
+/*-- scss:rules --*/
+
+// Newsreader, self-hosted, latin subset. Quarto resolves url() in SCSS relative
+// to the project root and copies the files next to the compiled stylesheet.
+//
+// These are VARIABLE builds carrying an optical-size axis, so letterforms are
+// redrawn at each size rather than scaled — the name and the publication
+// entries are genuinely different cuts. Browsers apply font-optical-sizing:
+// auto by default, so the weight range is all that needs declaring.
+@font-face {
+  font-family: "Newsreader"; font-style: normal; font-weight: 200 800;
+  src: url("fonts/newsreader-var.woff2") format("woff2"); font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader"; font-style: italic; font-weight: 200 800;
+  src: url("fonts/newsreader-var-italic.woff2") format("woff2"); font-display: swap;
+}
+
+:root {
+  --site-font: "Newsreader", Georgia, "Times New Roman", serif;
+}
+
+body {
+  font-family: var(--site-font);
+  font-size: 1.02rem;
+  line-height: 1.62;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { padding-top: 2.75rem; padding-bottom: 4rem; }
+
+// Header -------------------------------------------------------------------
+
+.profile-header {
+  display: grid;
+  grid-template-columns: clamp(200px, 38%, 320px) 1fr;   // grows with the column
+  gap: 2.25rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+.profile-photo {
+  width: 100%;          // the grid column above sets the actual size
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+// the markdown image renders inside a <p>, which is the grid item
+.profile-header > p { margin-bottom: 0; }
+
+.profile-header h1 {
+  font-size: 2.15rem;
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  margin: 0 0 0.65rem;
+  line-height: 1.15;
+}
+
+.affiliation {
+  color: $muted;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  margin-bottom: 0.9rem;
+}
+
+.links {
+  font-size: 0.94rem;
+
+  // Pandoc wraps the links in a <p>, so the flex container has to be that <p>.
+  // Putting it on .links makes the paragraph the only flex item and the gap
+  // never lands between the links. Flex is what lets the row wrap *between*
+  // links: the markdown deliberately has no spaces between them, which leaves
+  // the browser no other break opportunity.
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.3rem 0.55rem;
+  }
+
+  a {
+    text-decoration: none;
+    white-space: nowrap;   // never split "CV (pdf)" across lines
+  }
+  a:hover { text-decoration: underline; }
+
+  // trailing rather than leading, so a wrapped line starts with a link and not
+  // an orphaned separator. margin-left mirrors the flex gap on the other side.
+  a:not(:last-child)::after {
+    content: "·";
+    color: $muted;
+    margin-left: 0.55rem;
+    display: inline-block;
+  }
+}
+
+// The CV is what most visitors arrive for, so it gets its own row and a border
+// rather than being the fourth of four identical links.
+.cv-link {
+  margin-top: 0.9rem;
+
+  a {
+    display: inline-block;
+    font-size: 0.9rem;
+    line-height: 1;
+    text-decoration: none;
+    color: $cornell-red;
+    border: 2px solid rgba($cornell-red, 0.6);
+    border-radius: 4px;
+    padding: 0.45rem 1rem;
+  }
+  a:hover {
+    background: rgba($cornell-red, 0.07);
+    border-color: $cornell-red;
+  }
+}
+
+.bio {
+  font-size: 1.05rem;
+  line-height: 1.68;
+  margin-bottom: 2.5rem;
+  max-width: 62ch;
+}
+
+// Section headings ---------------------------------------------------------
+// Sentence case rather than tracked-out caps: the rule underneath already
+// separates the sections, so caps would signal it twice.
+
+main h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: $ink;
+  border-bottom: 1px solid $rule;
+  padding-bottom: 0.5rem;
+  margin: 2.6rem 0 1.4rem;
+}
+
+// Publications -------------------------------------------------------------
+
+.pub-list p {
+  margin: 0 0 1.35rem;
+  padding-left: 1.4em;
+  text-indent: -1.4em;   // hanging indent
+  max-width: 68ch;
+}
+
+.pub-list a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba($cornell-red, 0.28);
+}
+.pub-list a:hover { border-bottom-color: $cornell-red; }
+
+.extras {
+  display: block;
+  text-indent: 0;
+  font-size: 0.88rem;
+  color: $muted;
+  margin-top: 0.25rem;
+}
+
+// Small screens ------------------------------------------------------------
+
+@media (max-width: 780px) {
+  .profile-header {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  // full width of the content column, capped so it stops growing into an
+  // absurdly tall block on landscape phones and small tablets
+  .profile-photo { width: 100%; max-width: 430px; }
+  .profile-header h1 { font-size: 1.85rem; margin-top: 0; }
+  .pub-list p { padding-left: 0; text-indent: 0; }
+  main { padding-top: 1.75rem; }
+}
